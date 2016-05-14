@@ -18,7 +18,7 @@ module API::V1
         feature Roar::JSON::HAL
 
         with_comments = Class.new(Create) do
-          collection :comments, decorator: Comment::Representer::Show, embedded: true
+          collection :comments, decorator: API::V1::Comment::Representer::Show, embedded: true
         end
 
         collection :to_a, as: :things, embedded: true, decorator: with_comments
